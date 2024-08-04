@@ -1,0 +1,63 @@
+{
+  "name": "cengage-debug-companion",
+  "displayName": "Cengage Dewbug Companion",
+  "description": "A debug extension for Cengage and Github",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "activationEvents": [
+    "onCommand:cengage.toggleDarkLightMode",
+    "onCommand:cengage.openCommandPalette",
+    "onCommand:cengage.toggleTerminal"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cengage.toggleDarkLightMode",
+        "title": "Cengage Toggle Dark/Light Mode"
+      },
+      {
+        "command": "cengage.openCommandPalette",
+        "title": "Cengage Open Command Palette"
+      },
+      {
+        "command": "cengage.toggleTerminal",
+        "title": "Cengage Toggle Terminal"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "extension-actions",
+          "title": "Extension Actions",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "extension-actions": [
+        {
+          "id": "toggleDarkLightMode",
+          "name": "Toggle Dark/Light Mode"
+        },
+        {
+          "id": "openCommandPalette",
+          "name": "Open Command Palette"
+        },
+        {
+          "id": "toggleTerminal",
+          "name": "Toggle Terminal"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "vscode": "^1.1.37",
+    "eslint": "^6.8.0"
+  }
+}
